@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rubygems'
+require 'bundler/setup'
+require 'active_record'
+require 'sqlite3'
+require 'logger'
+require 'json'
+
+file = File.read('db/countries.json')
+country_hash = JSON.parse(file)
+
