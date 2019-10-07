@@ -1,2 +1,20 @@
 <h1>Citizens#index</h1>
 <p>Find me in app/views/citizens/index.html.erb</p>
+<div>
+    <table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Citizen Name</th>
+        <th>Citizenship</th>
+        <th></th>
+    </tr>
+    </thead>
+    <% @Citizens.each do |citizenn| %>
+    <tr>
+        <td><%=citizenn.name%></td>
+        <td><%=citizenn.citizenship%></td>
+        <td><%=link_to "Link for more info", citizens_show_path(citizenn)%></td>
+    </tr>
+    <%end%>
+    </table>
+</div>
