@@ -4,6 +4,8 @@
 <h2><%=@Show_country.name%>'s country code is <%= @Show_country.code%>. </h2>
 <h3>Citizens in <%=@Show_country.name%> - </h3>
 <ul> 
-    <li></li>
+    <% @Show_country.citizens.each do |kiki| %>
+        <li> <%= kiki.name %> </li>
+    <% end %>
 </ul>
 </div>

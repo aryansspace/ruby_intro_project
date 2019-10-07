@@ -4,5 +4,7 @@ class CitizensController < ApplicationController
   end
 
   def show
+    
+    @Show_citizen = Citizen.find(params[:id])
   end
 end
