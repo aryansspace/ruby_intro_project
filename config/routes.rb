@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
 
-  # resources :countries do
-  #   resources :users 
-  # end
+  resources :countries do
+    resources :citizens 
+  end
 
-  # resources :uses do
-  #   resources :countries
-  # end
+  resources :citizens do
+    resources :countries
+  end
 
 end
