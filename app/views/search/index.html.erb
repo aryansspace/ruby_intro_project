@@ -1,2 +1,31 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<div class = "container">
+    <h1>Search#index</h1>
+    <p>Find me in app/views/search/index.html.erb</p>
+    <% if @country.empty? %>
+    <p>Sorry, no country found.</p>
+  <% else %>
+    
+    <%= form_tag(search_index_path, method: "get", :class => 'd-inline-block') do %>
+      <%= label_tag(:q, "Search for City:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Country Name</th>
+            <th>Country Code</th>
+            <th></th>
+        </tr>
+        </thead>
+        <% @country.each do |c| %>
+        <tr>
+            <td><%=c.name%></td>
+            <td><%=c.code%></td>
+            <td><%=link_to "Link for more info", country_path(c)%></td>
+        </tr>
+        <%end%>
+      </table>
+  <% end %>
+</div>

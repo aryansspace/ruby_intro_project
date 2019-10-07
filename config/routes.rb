@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'citizens/show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
+  resources :search, only: [:index] do
+    collection do
+      get 'index'
+    end
+  end
 
   resources :countries do
     resources :citizens 
