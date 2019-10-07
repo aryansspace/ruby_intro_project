@@ -1,5 +1,5 @@
 class Citizen < ApplicationRecord
   belongs_to :country
 
-  validates :name, presense: true
+  validates :name, presence: true
 end
