@@ -1,6 +1,6 @@
 class CitizensController < ApplicationController
   def index
-    @Citizens = Citizen.all
+    @Citizens = Citizen.order(:name).page params[:page]
   end
 
   def show
